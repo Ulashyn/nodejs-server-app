@@ -1,10 +1,13 @@
-const expressLoader = async({app}) => {
+const path = require('path');
+const express = require('express');
+const iuRouter = require('../routes/ui');
+
+const expressLoader = async ({ app }) => {
+  // static files
+  app.use(express.static(path.join(__dirname, '../public')));
   // set view engine
   app.set('view engine', 'pug');
-  // set main route
-  app.get('/', (req, res, next) => {
-    return res.send('Hayoken!');
-  });
+  app.use('/', iuRouter)
   return app;
 }
 

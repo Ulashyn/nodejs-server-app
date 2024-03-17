@@ -1,4 +1,12 @@
 extends ../layout.pug
 
 block content
-  
+  div.uk-container
+    article.uk-article
+      h1 Some blog
+      p.uk-text-lead Some info
+      p | Create a 
+        a(href='/new-post') new post
+        br
+        | Go to 
+        a(href='/posts') all posts

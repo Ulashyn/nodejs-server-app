@@ -1,0 +1,20 @@
+extends ../layout.pug
+
+block content
+  div.uk-container
+    form
+      fieldset.uk-fieldset
+        legend.uk-legend Create new post
+        div.uk-margin
+          label(for='title').uk-form-title Title
+          div.uk-form-controls
+            input#title.uk-input(type='text', placeholder='Enter post title')
+        div.uk-margin
+          label(for='description').uk-form-title Description
+          div.uk-form-controls
+            input#description.uk-input(type='text', placeholder='Enter post description')
+        div.uk-margin
+          label(for='content').uk-form-title Content textarea
+          div.uk-form-controls
+            textarea#content.uk-textarea(rows=3)
+        button#submit.uk-button.uk-button-default(type='submit') Submit
