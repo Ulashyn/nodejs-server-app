@@ -4,13 +4,13 @@ if (window.location.pathname === '/new-post') {
     const formValues = document.forms['newPost'].elements;
     const data = {
       title: formValues['title'].value,
-      decription: formValues['description'].value,
+      description: formValues['description'].value,
       content: formValues['content'].value
     };
 
     fetch('/api/posts', {
       method: 'POST',
-      headers: {'Content-Type': 'aplication/json'},
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(data)
     })
       .then(res => res.json())
