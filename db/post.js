@@ -10,6 +10,14 @@ obj.create = async (post) => {
   } catch (error) {
     throw new Error(error.message);
   }
-}
+};
+
+obj.getLatestPosts = async (qty) => {
+  try {
+    return await PostModel.find().sort({date: -1}).limit(qty);
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
 
 module.exports = obj;
