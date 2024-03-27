@@ -14,7 +14,26 @@ if (window.location.pathname === '/new-post') {
       body: JSON.stringify(data)
     })
       .then(res => res.json())
-      .then(res => console.log(res))
-      .catch(err => alert(err));
+      .then(res => {
+        if (res && res.payload && res.payload.statusCode === 400) {
+          UIkit.notification({
+            message: res.payload.message,
+            status: 'warning',
+            pos: 'top-right',
+            timeout: 3000
+          });
+        }
+        if (res && res._id) {
+          window.location.replace('/posts');
+        }
+      })
+      .catch(err => {
+        UIkit.notification({
+          message: err.message,
+          status: 'danger',
+          pos: 'top-right',
+          timeout: 3000
+        });
+      });
   }
 }

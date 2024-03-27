@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const Boom = require('@hapi/boom');
 const iuRouter = require('../routes/ui');
 const postRouter = require('../routes/posts');
 const {toDateString} = require('../utils/dates');
@@ -16,6 +17,10 @@ const expressLoader = async ({ app }) => {
   app.set('view engine', 'pug');
   app.use('/', iuRouter);
   app.use('/api', postRouter);
+  // centralized error handler
+  app.use((err, req, res, next) => {
+    return res.send(Boom.boomify(err, {message: err, statusCode: 500}));
+  });
   return app;
 }
 

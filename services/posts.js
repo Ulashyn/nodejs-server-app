@@ -5,14 +5,14 @@ module.exports = {
     try {
       return PostDbService.create(post);
     } catch (error) {
-      throw new Error(error.message);
+      throw new Error(error);
     }
   },
   getLatestPosts: async(qty) => {
     try {
       return PostDbService.getLatestPosts(qty);
     } catch (error) {
-      throw new Error(error.message);
+      throw new Error(error);
     }
   },
 };

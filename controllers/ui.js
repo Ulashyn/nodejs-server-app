@@ -9,7 +9,7 @@ ctrl.about = (req, res) => {
 };
 ctrl.posts = async (req, res, next) => {
   try {
-    const result = await postsService.getLatestPosts(5);
+    const result = await postsService.getLatestPosts(6);
     return res.render('pages/posts', {posts: result || []});
   } catch (error) {
     next(error);

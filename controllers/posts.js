@@ -8,7 +8,7 @@ ctrl.create = async (req, res) => {
     const result = await PostService.create(post);
     return res.status(201).json(result);
   } catch (error) {
-    return next(error.message);
+    return next(error);
   }
 };
 
