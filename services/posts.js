@@ -8,9 +8,16 @@ module.exports = {
       throw new Error(error);
     }
   },
-  getLatestPosts: async(qty) => {
+  getLatestPosts: async (qty) => {
     try {
       return PostDbService.getLatestPosts(qty);
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+  findById: async (id) => {
+    try {
+      return PostDbService.findById(id);
     } catch (error) {
       throw new Error(error);
     }

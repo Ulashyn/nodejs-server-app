@@ -2,6 +2,6 @@ extends ../layout.pug
 
 block content
   div.uk-container
-    h1.uk-heading-divider.uk-text-center Title
-    h3.uk-text-muted.uk-text-center Description
-    p Content
+    h1.uk-heading-divider.uk-text-center=post.title
+    h3.uk-text-muted.uk-text-center=post.description
+    p=post.content

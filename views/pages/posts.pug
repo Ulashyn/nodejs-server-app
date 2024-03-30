@@ -11,6 +11,6 @@ block content
               h3.uk-card-title=post.title
             div.uk-card-body
               p=post.description
-              a(href='/posts/' + post._id, target='_blank').uk-button.uk-button-default Read
+              a(href='/posts/' + post._id).uk-button.uk-button-default Read
             div.uk-card-footer
               p.uk-text-meta=toDateString(post.date)

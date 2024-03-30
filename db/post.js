@@ -20,4 +20,12 @@ obj.getLatestPosts = async (qty) => {
   }
 };
 
+obj.findById = async (id) => {
+  try {
+    return await PostModel.findById(id);
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 module.exports = obj;
