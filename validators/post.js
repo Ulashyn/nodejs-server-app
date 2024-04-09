@@ -10,7 +10,6 @@ const schema = Joi.object({
 
 obj.create = (req, res, next) => {
   const result = schema.validate(req.body);
-  console.log(res);
   if(result && result.error) {
     const {output} = Boom.badRequest(result.error.message);
     return res.status(output.statusCode).json(output);

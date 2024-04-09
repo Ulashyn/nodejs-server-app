@@ -22,4 +22,11 @@ module.exports = {
       throw new Error(error);
     }
   },
+  delete: async (id) => {
+    try {
+      return PostDbService.delete(id);
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
 };

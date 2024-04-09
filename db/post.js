@@ -28,4 +28,14 @@ obj.findById = async (id) => {
   }
 };
 
+obj.delete = async (id) => {
+  try {
+    return await PostModel.deleteOne({_id: id});
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+obj
+
 module.exports = obj;
