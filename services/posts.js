@@ -8,6 +8,13 @@ module.exports = {
       throw new Error(error);
     }
   },
+  edit: async(post) => {
+    try {
+      return PostDbService.edit(post);
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
   getLatestPosts: async (qty) => {
     try {
       return PostDbService.getLatestPosts(qty);

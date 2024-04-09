@@ -12,6 +12,14 @@ obj.create = async (post) => {
   }
 };
 
+obj.edit = async (post) => {
+  try {
+    return await PostModel.updateOne({_id: post._id}, post);
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 obj.getLatestPosts = async (qty) => {
   try {
     return await PostModel.find().sort({date: -1}).limit(qty);

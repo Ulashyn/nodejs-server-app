@@ -12,6 +12,16 @@ ctrl.create = async (req, res) => {
   }
 };
 
+ctrl.edit = async (req, res) => {
+  const post = req.body;
+  try {
+    const result = await PostService.edit(post);
+    return res.status(201).json(result);
+  } catch (error) {
+    return next(error);
+  }
+};
+
 ctrl.getById = async (req, res) => {
   const {id} = req.params;
   try {

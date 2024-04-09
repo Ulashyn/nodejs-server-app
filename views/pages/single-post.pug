@@ -5,3 +5,5 @@ block content
     h1.uk-heading-divider.uk-text-center=post.title
     h3.uk-text-muted.uk-text-center=post.description
     p=post.content
+    a(href='/edit-post/' + post._id).uk-button.uk-button-default edit post
+    button#delete.uk-button.uk-button-default Delete

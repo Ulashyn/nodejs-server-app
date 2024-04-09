@@ -33,4 +33,14 @@ ctrl.singlePost = async (req, res, next) => {
   }
 };
 
+ctrl.editPost = async (req,res, next) => {
+  const {id} = req.params;
+  try {
+    const post = await postsService.findById(id);
+    return res.render('pages/edit-post', {post});
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = ctrl;
